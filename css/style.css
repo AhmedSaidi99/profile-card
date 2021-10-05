@@ -1,0 +1,115 @@
+/* Variables */
+:root {
+    --dark-cyan: hsl(185, 75%, 39%);
+    --dark-blue: hsl(229, 23%, 23%);
+    --dark-gray: hsl(0, 0%, 59%);
+}
+/*  End Variables */
+
+body {
+    height: 100vh;
+    background-color: var(--dark-cyan);
+    font-family: 'Kumbh Sans', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+body::before {
+    content: url(../images/bg-pattern-top.svg);
+    position: absolute;
+    top: -75%;
+    left: -20%;
+}
+body::after {
+    content: url(../images/bg-pattern-bottom.svg);
+    position: absolute;
+    bottom: -80%;
+    right: -20%;
+}
+@media (max-width: 375px) {
+    body::before {
+        top: -70%;
+        left: -216%;
+    }
+    body::after {
+        bottom: -70%;
+        right: -216%;
+    }
+}
+main {
+    width: 350px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: grid;
+    grid-template-rows: 150px 150px 100px;
+    box-shadow: 0px 30px 20px -5px hsl(0deg 0% 0% / 9%);
+}
+@media (max-width: 375px) {
+    main {
+        width: 330px;
+    }
+}
+main .pattern img {
+    width: 100%;
+    height: 100%;
+}
+main .card-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid var(--dark-gray);
+}
+main .card-info .image {
+    position: absolute;
+    top: -63px;
+    width: 30%;
+    border-radius: 50%;
+    border: 6px solid white;
+}
+main .card-info img {
+    width: 100%;
+    border-radius: 50%;
+}
+main .card-info .name {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0;
+}
+main .card-info .name span {
+    font-weight: 400;
+    font-size: 20px;
+    margin-left: 5px;
+}
+main .card-info .city {
+    font-size: 12px;
+}
+main .card-info .info {
+    margin-bottom: 15px;
+}
+main .stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+main .stats .stat-box {
+    font-weight: 700;
+    color: var(--dark-blue);
+    font-size: 18px;
+}
+main .stats .stat-box p {
+    font-weight: 400;
+    color: hsl(0, 0%, 59% / 20%);
+    font-size: 12px;
+    margin: 0;
+    letter-spacing: 1px;
+}
